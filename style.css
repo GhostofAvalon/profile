@@ -1,0 +1,93 @@
+body {
+  background-color: #353a47;
+  font-family: "Comfortaa", cursive;
+  font-weight: 300;
+  color: rgba(215, 215, 240, 0.9);
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #f29e4c;
+  font-size: 1.5em;
+  line-height: 0.5em;
+}
+
+h1 {
+  font-weight: 900;
+}
+a {
+  text-decoration: none;
+  color: #00bde8;
+  transition: all 0.6s ease-in-out;
+}
+a:hover {
+  padding: 12px 16px;
+  background-color: rgb(15, 15, 15);
+  color: rgb(255, 85, 85);
+}
+
+.container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+img {
+  border-radius: 50%;
+  max-height: 20vh;
+  padding: 3vh;
+}
+
+.card {
+  margin-top: 10vh;
+  padding: 5vh;
+  text-align: center;
+  box-shadow: blue 0px 0px 0px 2px inset, #353a47 10px -10px 0px -3px,
+    rgb(31, 193, 27) 10px -10px, #353a47 20px -20px 0px -3px,
+    rgb(255, 217, 19) 20px -20px, #353a47 30px -30px 0px -3px,
+    rgb(255, 156, 85) 30px -30px, #353a47 40px -40px 0px -3px,
+    rgb(255, 85, 85) 40px -40px;
+}
+
+.social-icons {
+  display: inline-flex;
+  margin-top: 25px;
+}
+.social-icons a {
+  color: rgb(230, 230, 230);
+  font-size: 40px;
+  text-align: center;
+  padding: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li a:hover {
+  padding: 12px 16px 8px 16px;
+  background-color: rgb(15, 15, 15);
+  color: rgb(31, 193, 27);
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  h1, h2 {
+    line-height: 1.5em;
+  }
+
+  li a:hover {
+    color: rgb(255, 156, 85);
+  }
+  .social-icons a {
+    color: rgb(230, 230, 230);
+    font-size: 36px;
+    text-align: center;
+    padding: 15px;
+  }
+}
