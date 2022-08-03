@@ -20,15 +20,18 @@ h3 {
 h1 {
   font-weight: 900;
 }
+
 a {
   text-decoration: none;
   color: #00bde8;
   transition: all 0.6s ease-in-out;
 }
-a:hover {
+
+#awesome:hover {
   padding: 12px 16px;
   background-color: rgb(15, 15, 15);
   color: rgb(255, 85, 85);
+  font-size: 1.5em;
 }
 
 .container {
@@ -40,6 +43,10 @@ img {
   border-radius: 50%;
   max-height: 20vh;
   padding: 3vh;
+  border: 20px solid pink;
+  border-image-source: url(./images/hearts-border-image.png);
+  border-image-slice: 20 22;
+  border-image-repeat: round;
 }
 
 .card {
@@ -51,11 +58,27 @@ img {
     rgb(255, 217, 19) 20px -20px, #353a47 30px -30px 0px -3px,
     rgb(255, 156, 85) 30px -30px, #353a47 40px -40px 0px -3px,
     rgb(255, 85, 85) 40px -40px;
+  animation: animateborder 2s ease-in-out 1;
+  transition: all 1s ease-in-out;
+}
+
+.card:hover {
+  transform: rotate(2deg);
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(31, 193, 27) 10px -10px,
+    rgb(255, 217, 19) 20px -20px, rgb(255, 156, 85) 30px -30px,
+    rgb(255, 85, 85) 40px -40px;
+  animation: crazy-rainbow-animation 0s linear infinite;
+  animation-direction: reverse;
 }
 
 .social-icons {
   display: inline-flex;
   margin-top: 25px;
+}
+
+.social-icons:hover {
+  animation: crazy-rainbow-animation 4s linear infinite;
+  animation-direction: reverse;
 }
 .social-icons a {
   color: rgb(230, 230, 230);
@@ -71,14 +94,19 @@ ul {
 
 li a:hover {
   padding: 12px 16px 8px 16px;
-  background-color: rgb(15, 15, 15);
+  /* background-color: rgb(15, 15, 15); */
   color: rgb(31, 193, 27);
 }
 
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
-  h1, h2 {
+  h1,
+  h2 {
     line-height: 1.5em;
+  }
+  img {
+    border: none;
+    padding: 0;
   }
 
   li a:hover {
@@ -89,5 +117,900 @@ li a:hover {
     font-size: 36px;
     text-align: center;
     padding: 15px;
+  }
+}
+
+@keyframes crazy-rainbow-animation {
+  0% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red,
+      18px 18px 0 orangered, 20px 20px 0 orangered, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 orangered, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 gold,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  2% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red,
+      18px 18px 0 orangered, 20px 20px 0 orangered, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 orangered, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 gold,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  4% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 orangered,
+      18px 18px 0 orangered, 20px 20px 0 orangered, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 gold, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 lightgreen,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 green, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 deepskyblue,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 red;
+  }
+  6% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 orangered,
+      16px 16px 0 orangered, 18px 18px 0 orangered, 20px 20px 0 orangered,
+      22px 22px 0 orangered, 24px 24px 0 orangered, 26px 26px 0 orangered,
+      28px 28px 0 orangered, 30px 30px 0 gold, 32px 32px 0 gold,
+      34px 34px 0 gold, 36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold,
+      42px 42px 0 gold, 44px 44px 0 gold, 46px 46px 0 lightgreen,
+      48px 48px 0 lightgreen, 50px 50px 0 lightgreen, 52px 52px 0 lightgreen,
+      54px 54px 0 lightgreen, 56px 56px 0 lightgreen, 58px 58px 0 lightgreen,
+      60px 60px 0 lightgreen, 62px 62px 0 green, 64px 64px 0 green,
+      66px 66px 0 green, 68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green,
+      74px 74px 0 green, 76px 76px 0 green, 78px 78px 0 deepskyblue,
+      80px 80px 0 deepskyblue, 82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue,
+      86px 86px 0 deepskyblue, 88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue,
+      92px 92px 0 deepskyblue, 94px 94px 0 red, 96px 96px 0 red;
+  }
+  8% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 orangered, 14px 14px 0 orangered,
+      16px 16px 0 orangered, 18px 18px 0 orangered, 20px 20px 0 orangered,
+      22px 22px 0 orangered, 24px 24px 0 orangered, 26px 26px 0 orangered,
+      28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 lightgreen, 46px 46px 0 lightgreen, 48px 48px 0 lightgreen,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 green,
+      62px 62px 0 green, 64px 64px 0 green, 66px 66px 0 green, 68px 68px 0 green,
+      70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 deepskyblue, 78px 78px 0 deepskyblue, 80px 80px 0 deepskyblue,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 red,
+      94px 94px 0 red, 96px 96px 0 red;
+  }
+  10% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 orangered, 12px 12px 0 orangered, 14px 14px 0 orangered,
+      16px 16px 0 orangered, 18px 18px 0 orangered, 20px 20px 0 orangered,
+      22px 22px 0 orangered, 24px 24px 0 orangered, 26px 26px 0 gold,
+      28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold,
+      42px 42px 0 lightgreen, 44px 44px 0 lightgreen, 46px 46px 0 lightgreen,
+      48px 48px 0 lightgreen, 50px 50px 0 lightgreen, 52px 52px 0 lightgreen,
+      54px 54px 0 lightgreen, 56px 56px 0 lightgreen, 58px 58px 0 green,
+      60px 60px 0 green, 62px 62px 0 green, 64px 64px 0 green, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green,
+      74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue, 78px 78px 0 deepskyblue,
+      80px 80px 0 deepskyblue, 82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue,
+      86px 86px 0 deepskyblue, 88px 88px 0 deepskyblue, 90px 90px 0 red,
+      92px 92px 0 red, 94px 94px 0 red, 96px 96px 0 red;
+  }
+  12% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 orangered, 16px 16px 0 orangered, 18px 18px 0 orangered,
+      20px 20px 0 orangered, 22px 22px 0 orangered, 24px 24px 0 gold,
+      26px 26px 0 gold, 28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold,
+      34px 34px 0 gold, 36px 36px 0 gold, 38px 38px 0 gold,
+      40px 40px 0 lightgreen, 42px 42px 0 lightgreen, 44px 44px 0 lightgreen,
+      46px 46px 0 lightgreen, 48px 48px 0 lightgreen, 50px 50px 0 lightgreen,
+      52px 52px 0 lightgreen, 54px 54px 0 lightgreen, 56px 56px 0 green,
+      58px 58px 0 green, 60px 60px 0 green, 62px 62px 0 green, 64px 64px 0 green,
+      66px 66px 0 green, 68px 68px 0 green, 70px 70px 0 green,
+      72px 72px 0 deepskyblue, 74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue,
+      78px 78px 0 deepskyblue, 80px 80px 0 deepskyblue, 82px 82px 0 deepskyblue,
+      84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue, 88px 88px 0 red,
+      90px 90px 0 red, 92px 92px 0 red, 94px 94px 0 red, 96px 96px 0 red;
+  }
+  14% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 orangered, 16px 16px 0 orangered, 18px 18px 0 orangered,
+      20px 20px 0 orangered, 22px 22px 0 gold, 24px 24px 0 gold,
+      26px 26px 0 gold, 28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold,
+      34px 34px 0 gold, 36px 36px 0 gold, 38px 38px 0 lightgreen,
+      40px 40px 0 lightgreen, 42px 42px 0 lightgreen, 44px 44px 0 lightgreen,
+      46px 46px 0 lightgreen, 48px 48px 0 lightgreen, 50px 50px 0 lightgreen,
+      52px 52px 0 lightgreen, 54px 54px 0 green, 56px 56px 0 green,
+      58px 58px 0 green, 60px 60px 0 green, 62px 62px 0 green, 64px 64px 0 green,
+      66px 66px 0 green, 68px 68px 0 green, 70px 70px 0 deepskyblue,
+      72px 72px 0 deepskyblue, 74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue,
+      78px 78px 0 deepskyblue, 80px 80px 0 deepskyblue, 82px 82px 0 deepskyblue,
+      84px 84px 0 deepskyblue, 86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 red,
+      92px 92px 0 red, 94px 94px 0 red, 96px 96px 0 red;
+  }
+  16% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 orangered, 16px 16px 0 orangered, 18px 18px 0 orangered,
+      20px 20px 0 gold, 22px 22px 0 gold, 24px 24px 0 gold, 26px 26px 0 gold,
+      28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold, 34px 34px 0 gold,
+      36px 36px 0 lightgreen, 38px 38px 0 lightgreen, 40px 40px 0 lightgreen,
+      42px 42px 0 lightgreen, 44px 44px 0 lightgreen, 46px 46px 0 lightgreen,
+      48px 48px 0 lightgreen, 50px 50px 0 lightgreen, 52px 52px 0 green,
+      54px 54px 0 green, 56px 56px 0 green, 58px 58px 0 green, 60px 60px 0 green,
+      62px 62px 0 green, 64px 64px 0 green, 66px 66px 0 green,
+      68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue, 72px 72px 0 deepskyblue,
+      74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue, 78px 78px 0 deepskyblue,
+      80px 80px 0 deepskyblue, 82px 82px 0 deepskyblue, 84px 84px 0 red,
+      86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 red, 92px 92px 0 red,
+      94px 94px 0 red, 96px 96px 0 red;
+  }
+  18% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 orangered, 16px 16px 0 orangered, 18px 18px 0 gold,
+      20px 20px 0 gold, 22px 22px 0 gold, 24px 24px 0 gold, 26px 26px 0 gold,
+      28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 gold,
+      34px 34px 0 lightgreen, 36px 36px 0 lightgreen, 38px 38px 0 lightgreen,
+      40px 40px 0 lightgreen, 42px 42px 0 lightgreen, 44px 44px 0 lightgreen,
+      46px 46px 0 lightgreen, 48px 48px 0 lightgreen, 50px 50px 0 green,
+      52px 52px 0 green, 54px 54px 0 green, 56px 56px 0 green, 58px 58px 0 green,
+      60px 60px 0 green, 62px 62px 0 green, 64px 64px 0 green,
+      66px 66px 0 deepskyblue, 68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue,
+      72px 72px 0 deepskyblue, 74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue,
+      78px 78px 0 deepskyblue, 80px 80px 0 deepskyblue, 82px 82px 0 red,
+      84px 84px 0 red, 86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 red,
+      92px 92px 0 red, 94px 94px 0 red, 96px 96px 0 red;
+  }
+  20% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 orangered, 16px 16px 0 gold, 18px 18px 0 gold,
+      20px 20px 0 gold, 22px 22px 0 gold, 24px 24px 0 gold, 26px 26px 0 gold,
+      28px 28px 0 gold, 30px 30px 0 gold, 32px 32px 0 lightgreen,
+      34px 34px 0 lightgreen, 36px 36px 0 lightgreen, 38px 38px 0 lightgreen,
+      40px 40px 0 lightgreen, 42px 42px 0 lightgreen, 44px 44px 0 lightgreen,
+      46px 46px 0 lightgreen, 48px 48px 0 green, 50px 50px 0 green,
+      52px 52px 0 green, 54px 54px 0 green, 56px 56px 0 green, 58px 58px 0 green,
+      60px 60px 0 green, 62px 62px 0 green, 64px 64px 0 deepskyblue,
+      66px 66px 0 deepskyblue, 68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue,
+      72px 72px 0 deepskyblue, 74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue,
+      78px 78px 0 deepskyblue, 80px 80px 0 red, 82px 82px 0 red, 84px 84px 0 red,
+      86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 red, 92px 92px 0 red,
+      94px 94px 0 red, 96px 96px 0 orangered;
+  }
+  22% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 orangered,
+      14px 14px 0 gold, 16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 gold,
+      22px 22px 0 gold, 24px 24px 0 gold, 26px 26px 0 gold, 28px 28px 0 gold,
+      30px 30px 0 lightgreen, 32px 32px 0 lightgreen, 34px 34px 0 lightgreen,
+      36px 36px 0 lightgreen, 38px 38px 0 lightgreen, 40px 40px 0 lightgreen,
+      42px 42px 0 lightgreen, 44px 44px 0 lightgreen, 46px 46px 0 green,
+      48px 48px 0 green, 50px 50px 0 green, 52px 52px 0 green, 54px 54px 0 green,
+      56px 56px 0 green, 58px 58px 0 green, 60px 60px 0 green,
+      62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue, 66px 66px 0 deepskyblue,
+      68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue, 72px 72px 0 deepskyblue,
+      74px 74px 0 deepskyblue, 76px 76px 0 deepskyblue, 78px 78px 0 red,
+      80px 80px 0 red, 82px 82px 0 red, 84px 84px 0 red, 86px 86px 0 red,
+      88px 88px 0 red, 90px 90px 0 red, 92px 92px 0 red, 94px 94px 0 orangered,
+      96px 96px 0 orangered;
+  }
+  24% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 orangered, 12px 12px 0 gold,
+      14px 14px 0 gold, 16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 gold,
+      22px 22px 0 gold, 24px 24px 0 gold, 26px 26px 0 gold,
+      28px 28px 0 lightgreen, 30px 30px 0 lightgreen, 32px 32px 0 lightgreen,
+      34px 34px 0 lightgreen, 36px 36px 0 lightgreen, 38px 38px 0 lightgreen,
+      40px 40px 0 lightgreen, 42px 42px 0 lightgreen, 44px 44px 0 green,
+      46px 46px 0 green, 48px 48px 0 green, 50px 50px 0 green, 52px 52px 0 green,
+      54px 54px 0 green, 56px 56px 0 green, 58px 58px 0 green,
+      60px 60px 0 deepskyblue, 62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue,
+      66px 66px 0 deepskyblue, 68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue,
+      72px 72px 0 deepskyblue, 74px 74px 0 deepskyblue, 76px 76px 0 red,
+      78px 78px 0 red, 80px 80px 0 red, 82px 82px 0 red, 84px 84px 0 red,
+      86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 red, 92px 92px 0 orangered,
+      94px 94px 0 orangered, 96px 96px 0 orangered;
+  }
+  26% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 orangered, 10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold,
+      16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 gold, 22px 22px 0 gold,
+      24px 24px 0 gold, 26px 26px 0 lightgreen, 28px 28px 0 lightgreen,
+      30px 30px 0 lightgreen, 32px 32px 0 lightgreen, 34px 34px 0 lightgreen,
+      36px 36px 0 lightgreen, 38px 38px 0 lightgreen, 40px 40px 0 lightgreen,
+      42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 green, 48px 48px 0 green,
+      50px 50px 0 green, 52px 52px 0 green, 54px 54px 0 green, 56px 56px 0 green,
+      58px 58px 0 deepskyblue, 60px 60px 0 deepskyblue, 62px 62px 0 deepskyblue,
+      64px 64px 0 deepskyblue, 66px 66px 0 deepskyblue, 68px 68px 0 deepskyblue,
+      70px 70px 0 deepskyblue, 72px 72px 0 deepskyblue, 74px 74px 0 red,
+      76px 76px 0 red, 78px 78px 0 red, 80px 80px 0 red, 82px 82px 0 red,
+      84px 84px 0 red, 86px 86px 0 red, 88px 88px 0 red, 90px 90px 0 orangered,
+      92px 92px 0 orangered, 94px 94px 0 orangered, 96px 96px 0 orangered;
+  }
+  28% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 orangered,
+      8px 8px 0 gold, 10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold,
+      16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 gold, 22px 22px 0 gold,
+      24px 24px 0 lightgreen, 26px 26px 0 lightgreen, 28px 28px 0 lightgreen,
+      30px 30px 0 lightgreen, 32px 32px 0 lightgreen, 34px 34px 0 lightgreen,
+      36px 36px 0 lightgreen, 38px 38px 0 lightgreen, 40px 40px 0 green,
+      42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 green, 48px 48px 0 green,
+      50px 50px 0 green, 52px 52px 0 green, 54px 54px 0 green,
+      56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue, 60px 60px 0 deepskyblue,
+      62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue, 66px 66px 0 deepskyblue,
+      68px 68px 0 deepskyblue, 70px 70px 0 deepskyblue, 72px 72px 0 red,
+      74px 74px 0 red, 76px 76px 0 red, 78px 78px 0 red, 80px 80px 0 red,
+      82px 82px 0 red, 84px 84px 0 red, 86px 86px 0 red, 88px 88px 0 orangered,
+      90px 90px 0 orangered, 92px 92px 0 orangered, 94px 94px 0 orangered,
+      96px 96px 0 orangered;
+  }
+  30% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 orangered, 6px 6px 0 gold,
+      8px 8px 0 gold, 10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold,
+      16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 gold,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 lightgreen,
+      28px 28px 0 lightgreen, 30px 30px 0 lightgreen, 32px 32px 0 lightgreen,
+      34px 34px 0 lightgreen, 36px 36px 0 lightgreen, 38px 38px 0 green,
+      40px 40px 0 green, 42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 green,
+      48px 48px 0 green, 50px 50px 0 green, 52px 52px 0 green,
+      54px 54px 0 deepskyblue, 56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue,
+      60px 60px 0 deepskyblue, 62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue,
+      66px 66px 0 deepskyblue, 68px 68px 0 deepskyblue, 70px 70px 0 red,
+      72px 72px 0 red, 74px 74px 0 red, 76px 76px 0 red, 78px 78px 0 red,
+      80px 80px 0 red, 82px 82px 0 red, 84px 84px 0 red, 86px 86px 0 orangered,
+      88px 88px 0 orangered, 90px 90px 0 orangered, 92px 92px 0 orangered,
+      94px 94px 0 orangered, 96px 96px 0 orangered;
+  }
+  32% {
+    text-shadow: 2px 2px 0 orangered, 4px 4px 0 gold, 6px 6px 0 gold,
+      8px 8px 0 gold, 10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold,
+      16px 16px 0 gold, 18px 18px 0 gold, 20px 20px 0 lightgreen,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 lightgreen,
+      28px 28px 0 lightgreen, 30px 30px 0 lightgreen, 32px 32px 0 lightgreen,
+      34px 34px 0 lightgreen, 36px 36px 0 green, 38px 38px 0 green,
+      40px 40px 0 green, 42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 green,
+      48px 48px 0 green, 50px 50px 0 green, 52px 52px 0 deepskyblue,
+      54px 54px 0 deepskyblue, 56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue,
+      60px 60px 0 deepskyblue, 62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue,
+      66px 66px 0 deepskyblue, 68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 red,
+      74px 74px 0 red, 76px 76px 0 red, 78px 78px 0 red, 80px 80px 0 red,
+      82px 82px 0 red, 84px 84px 0 orangered, 86px 86px 0 orangered,
+      88px 88px 0 orangered, 90px 90px 0 orangered, 92px 92px 0 orangered,
+      94px 94px 0 orangered, 96px 96px 0 orangered;
+  }
+  34% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold, 8px 8px 0 gold,
+      10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold, 16px 16px 0 gold,
+      18px 18px 0 lightgreen, 20px 20px 0 lightgreen, 22px 22px 0 lightgreen,
+      24px 24px 0 lightgreen, 26px 26px 0 lightgreen, 28px 28px 0 lightgreen,
+      30px 30px 0 lightgreen, 32px 32px 0 lightgreen, 34px 34px 0 green,
+      36px 36px 0 green, 38px 38px 0 green, 40px 40px 0 green, 42px 42px 0 green,
+      44px 44px 0 green, 46px 46px 0 green, 48px 48px 0 green,
+      50px 50px 0 deepskyblue, 52px 52px 0 deepskyblue, 54px 54px 0 deepskyblue,
+      56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue, 60px 60px 0 deepskyblue,
+      62px 62px 0 deepskyblue, 64px 64px 0 deepskyblue, 66px 66px 0 red,
+      68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 red, 74px 74px 0 red,
+      76px 76px 0 red, 78px 78px 0 red, 80px 80px 0 red, 82px 82px 0 orangered,
+      84px 84px 0 orangered, 86px 86px 0 orangered, 88px 88px 0 orangered,
+      90px 90px 0 orangered, 92px 92px 0 orangered, 94px 94px 0 orangered,
+      96px 96px 0 orangered;
+  }
+  36% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold, 8px 8px 0 gold,
+      10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 gold,
+      16px 16px 0 lightgreen, 18px 18px 0 lightgreen, 20px 20px 0 lightgreen,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 lightgreen,
+      28px 28px 0 lightgreen, 30px 30px 0 lightgreen, 32px 32px 0 green,
+      34px 34px 0 green, 36px 36px 0 green, 38px 38px 0 green, 40px 40px 0 green,
+      42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 green,
+      48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue, 52px 52px 0 deepskyblue,
+      54px 54px 0 deepskyblue, 56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue,
+      60px 60px 0 deepskyblue, 62px 62px 0 deepskyblue, 64px 64px 0 red,
+      66px 66px 0 red, 68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 red,
+      74px 74px 0 red, 76px 76px 0 red, 78px 78px 0 red, 80px 80px 0 orangered,
+      82px 82px 0 orangered, 84px 84px 0 orangered, 86px 86px 0 orangered,
+      88px 88px 0 orangered, 90px 90px 0 orangered, 92px 92px 0 orangered,
+      94px 94px 0 orangered, 96px 96px 0 gold;
+  }
+  38% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold, 8px 8px 0 gold,
+      10px 10px 0 gold, 12px 12px 0 gold, 14px 14px 0 lightgreen,
+      16px 16px 0 lightgreen, 18px 18px 0 lightgreen, 20px 20px 0 lightgreen,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 lightgreen,
+      28px 28px 0 lightgreen, 30px 30px 0 green, 32px 32px 0 green,
+      34px 34px 0 green, 36px 36px 0 green, 38px 38px 0 green, 40px 40px 0 green,
+      42px 42px 0 green, 44px 44px 0 green, 46px 46px 0 deepskyblue,
+      48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue, 52px 52px 0 deepskyblue,
+      54px 54px 0 deepskyblue, 56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue,
+      60px 60px 0 deepskyblue, 62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 red,
+      68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 red, 74px 74px 0 red,
+      76px 76px 0 red, 78px 78px 0 orangered, 80px 80px 0 orangered,
+      82px 82px 0 orangered, 84px 84px 0 orangered, 86px 86px 0 orangered,
+      88px 88px 0 orangered, 90px 90px 0 orangered, 92px 92px 0 orangered,
+      94px 94px 0 gold, 96px 96px 0 gold;
+  }
+  40% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold, 8px 8px 0 gold,
+      10px 10px 0 gold, 12px 12px 0 lightgreen, 14px 14px 0 lightgreen,
+      16px 16px 0 lightgreen, 18px 18px 0 lightgreen, 20px 20px 0 lightgreen,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 lightgreen,
+      28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green, 34px 34px 0 green,
+      36px 36px 0 green, 38px 38px 0 green, 40px 40px 0 green, 42px 42px 0 green,
+      44px 44px 0 deepskyblue, 46px 46px 0 deepskyblue, 48px 48px 0 deepskyblue,
+      50px 50px 0 deepskyblue, 52px 52px 0 deepskyblue, 54px 54px 0 deepskyblue,
+      56px 56px 0 deepskyblue, 58px 58px 0 deepskyblue, 60px 60px 0 red,
+      62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 red, 68px 68px 0 red,
+      70px 70px 0 red, 72px 72px 0 red, 74px 74px 0 red, 76px 76px 0 orangered,
+      78px 78px 0 orangered, 80px 80px 0 orangered, 82px 82px 0 orangered,
+      84px 84px 0 orangered, 86px 86px 0 orangered, 88px 88px 0 orangered,
+      90px 90px 0 orangered, 92px 92px 0 gold, 94px 94px 0 gold,
+      96px 96px 0 gold;
+  }
+  42% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold, 8px 8px 0 gold,
+      10px 10px 0 lightgreen, 12px 12px 0 lightgreen, 14px 14px 0 lightgreen,
+      16px 16px 0 lightgreen, 18px 18px 0 lightgreen, 20px 20px 0 lightgreen,
+      22px 22px 0 lightgreen, 24px 24px 0 lightgreen, 26px 26px 0 green,
+      28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green, 34px 34px 0 green,
+      36px 36px 0 green, 38px 38px 0 green, 40px 40px 0 green,
+      42px 42px 0 deepskyblue, 44px 44px 0 deepskyblue, 46px 46px 0 deepskyblue,
+      48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue, 52px 52px 0 deepskyblue,
+      54px 54px 0 deepskyblue, 56px 56px 0 deepskyblue, 58px 58px 0 red,
+      60px 60px 0 red, 62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 red,
+      68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 red, 74px 74px 0 orangered,
+      76px 76px 0 orangered, 78px 78px 0 orangered, 80px 80px 0 orangered,
+      82px 82px 0 orangered, 84px 84px 0 orangered, 86px 86px 0 orangered,
+      88px 88px 0 orangered, 90px 90px 0 gold, 92px 92px 0 gold,
+      94px 94px 0 gold, 96px 96px 0 gold;
+  }
+  44% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 gold,
+      8px 8px 0 lightgreen, 10px 10px 0 lightgreen, 12px 12px 0 lightgreen,
+      14px 14px 0 lightgreen, 16px 16px 0 lightgreen, 18px 18px 0 lightgreen,
+      20px 20px 0 lightgreen, 22px 22px 0 lightgreen, 24px 24px 0 green,
+      26px 26px 0 green, 28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green,
+      34px 34px 0 green, 36px 36px 0 green, 38px 38px 0 green,
+      40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue, 44px 44px 0 deepskyblue,
+      46px 46px 0 deepskyblue, 48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue,
+      52px 52px 0 deepskyblue, 54px 54px 0 deepskyblue, 56px 56px 0 red,
+      58px 58px 0 red, 60px 60px 0 red, 62px 62px 0 red, 64px 64px 0 red,
+      66px 66px 0 red, 68px 68px 0 red, 70px 70px 0 red, 72px 72px 0 orangered,
+      74px 74px 0 orangered, 76px 76px 0 orangered, 78px 78px 0 orangered,
+      80px 80px 0 orangered, 82px 82px 0 orangered, 84px 84px 0 orangered,
+      86px 86px 0 orangered, 88px 88px 0 gold, 90px 90px 0 gold,
+      92px 92px 0 gold, 94px 94px 0 gold, 96px 96px 0 gold;
+  }
+  46% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 gold, 6px 6px 0 lightgreen,
+      8px 8px 0 lightgreen, 10px 10px 0 lightgreen, 12px 12px 0 lightgreen,
+      14px 14px 0 lightgreen, 16px 16px 0 lightgreen, 18px 18px 0 lightgreen,
+      20px 20px 0 lightgreen, 22px 22px 0 green, 24px 24px 0 green,
+      26px 26px 0 green, 28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green,
+      34px 34px 0 green, 36px 36px 0 green, 38px 38px 0 deepskyblue,
+      40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue, 44px 44px 0 deepskyblue,
+      46px 46px 0 deepskyblue, 48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue,
+      52px 52px 0 deepskyblue, 54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 red,
+      60px 60px 0 red, 62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 red,
+      68px 68px 0 red, 70px 70px 0 orangered, 72px 72px 0 orangered,
+      74px 74px 0 orangered, 76px 76px 0 orangered, 78px 78px 0 orangered,
+      80px 80px 0 orangered, 82px 82px 0 orangered, 84px 84px 0 orangered,
+      86px 86px 0 gold, 88px 88px 0 gold, 90px 90px 0 gold, 92px 92px 0 gold,
+      94px 94px 0 gold, 96px 96px 0 gold;
+  }
+  48% {
+    text-shadow: 2px 2px 0 gold, 4px 4px 0 lightgreen, 6px 6px 0 lightgreen,
+      8px 8px 0 lightgreen, 10px 10px 0 lightgreen, 12px 12px 0 lightgreen,
+      14px 14px 0 lightgreen, 16px 16px 0 lightgreen, 18px 18px 0 lightgreen,
+      20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green, 26px 26px 0 green,
+      28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green, 34px 34px 0 green,
+      36px 36px 0 deepskyblue, 38px 38px 0 deepskyblue, 40px 40px 0 deepskyblue,
+      42px 42px 0 deepskyblue, 44px 44px 0 deepskyblue, 46px 46px 0 deepskyblue,
+      48px 48px 0 deepskyblue, 50px 50px 0 deepskyblue, 52px 52px 0 red,
+      54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 red, 60px 60px 0 red,
+      62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 red, 68px 68px 0 orangered,
+      70px 70px 0 orangered, 72px 72px 0 orangered, 74px 74px 0 orangered,
+      76px 76px 0 orangered, 78px 78px 0 orangered, 80px 80px 0 orangered,
+      82px 82px 0 orangered, 84px 84px 0 gold, 86px 86px 0 gold,
+      88px 88px 0 gold, 90px 90px 0 gold, 92px 92px 0 gold, 94px 94px 0 gold,
+      96px 96px 0 gold;
+  }
+  50% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 lightgreen, 10px 10px 0 lightgreen,
+      12px 12px 0 lightgreen, 14px 14px 0 lightgreen, 16px 16px 0 lightgreen,
+      18px 18px 0 green, 20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green,
+      26px 26px 0 green, 28px 28px 0 green, 30px 30px 0 green, 32px 32px 0 green,
+      34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue, 38px 38px 0 deepskyblue,
+      40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue, 44px 44px 0 deepskyblue,
+      46px 46px 0 deepskyblue, 48px 48px 0 deepskyblue, 50px 50px 0 red,
+      52px 52px 0 red, 54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 red,
+      60px 60px 0 red, 62px 62px 0 red, 64px 64px 0 red, 66px 66px 0 orangered,
+      68px 68px 0 orangered, 70px 70px 0 orangered, 72px 72px 0 orangered,
+      74px 74px 0 orangered, 76px 76px 0 orangered, 78px 78px 0 orangered,
+      80px 80px 0 orangered, 82px 82px 0 gold, 84px 84px 0 gold,
+      86px 86px 0 gold, 88px 88px 0 gold, 90px 90px 0 gold, 92px 92px 0 gold,
+      94px 94px 0 gold, 96px 96px 0 gold;
+  }
+  52% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 lightgreen, 10px 10px 0 lightgreen,
+      12px 12px 0 lightgreen, 14px 14px 0 lightgreen, 16px 16px 0 green,
+      18px 18px 0 green, 20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green,
+      26px 26px 0 green, 28px 28px 0 green, 30px 30px 0 green,
+      32px 32px 0 deepskyblue, 34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue,
+      38px 38px 0 deepskyblue, 40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue,
+      44px 44px 0 deepskyblue, 46px 46px 0 deepskyblue, 48px 48px 0 red,
+      50px 50px 0 red, 52px 52px 0 red, 54px 54px 0 red, 56px 56px 0 red,
+      58px 58px 0 red, 60px 60px 0 red, 62px 62px 0 red, 64px 64px 0 orangered,
+      66px 66px 0 orangered, 68px 68px 0 orangered, 70px 70px 0 orangered,
+      72px 72px 0 orangered, 74px 74px 0 orangered, 76px 76px 0 orangered,
+      78px 78px 0 orangered, 80px 80px 0 gold, 82px 82px 0 gold,
+      84px 84px 0 gold, 86px 86px 0 gold, 88px 88px 0 gold, 90px 90px 0 gold,
+      92px 92px 0 gold, 94px 94px 0 gold, 96px 96px 0 lightgreen;
+  }
+  54% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 lightgreen, 10px 10px 0 lightgreen,
+      12px 12px 0 lightgreen, 14px 14px 0 green, 16px 16px 0 green,
+      18px 18px 0 green, 20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green,
+      26px 26px 0 green, 28px 28px 0 green, 30px 30px 0 deepskyblue,
+      32px 32px 0 deepskyblue, 34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue,
+      38px 38px 0 deepskyblue, 40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue,
+      44px 44px 0 deepskyblue, 46px 46px 0 red, 48px 48px 0 red, 50px 50px 0 red,
+      52px 52px 0 red, 54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 red,
+      60px 60px 0 red, 62px 62px 0 orangered, 64px 64px 0 orangered,
+      66px 66px 0 orangered, 68px 68px 0 orangered, 70px 70px 0 orangered,
+      72px 72px 0 orangered, 74px 74px 0 orangered, 76px 76px 0 orangered,
+      78px 78px 0 gold, 80px 80px 0 gold, 82px 82px 0 gold, 84px 84px 0 gold,
+      86px 86px 0 gold, 88px 88px 0 gold, 90px 90px 0 gold, 92px 92px 0 gold,
+      94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  56% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 lightgreen, 10px 10px 0 lightgreen,
+      12px 12px 0 green, 14px 14px 0 green, 16px 16px 0 green, 18px 18px 0 green,
+      20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green, 26px 26px 0 green,
+      28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue, 32px 32px 0 deepskyblue,
+      34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue, 38px 38px 0 deepskyblue,
+      40px 40px 0 deepskyblue, 42px 42px 0 deepskyblue, 44px 44px 0 red,
+      46px 46px 0 red, 48px 48px 0 red, 50px 50px 0 red, 52px 52px 0 red,
+      54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 red, 60px 60px 0 orangered,
+      62px 62px 0 orangered, 64px 64px 0 orangered, 66px 66px 0 orangered,
+      68px 68px 0 orangered, 70px 70px 0 orangered, 72px 72px 0 orangered,
+      74px 74px 0 orangered, 76px 76px 0 gold, 78px 78px 0 gold,
+      80px 80px 0 gold, 82px 82px 0 gold, 84px 84px 0 gold, 86px 86px 0 gold,
+      88px 88px 0 gold, 90px 90px 0 gold, 92px 92px 0 lightgreen,
+      94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  58% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 lightgreen, 10px 10px 0 green,
+      12px 12px 0 green, 14px 14px 0 green, 16px 16px 0 green, 18px 18px 0 green,
+      20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 green,
+      26px 26px 0 deepskyblue, 28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue,
+      32px 32px 0 deepskyblue, 34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue,
+      38px 38px 0 deepskyblue, 40px 40px 0 deepskyblue, 42px 42px 0 red,
+      44px 44px 0 red, 46px 46px 0 red, 48px 48px 0 red, 50px 50px 0 red,
+      52px 52px 0 red, 54px 54px 0 red, 56px 56px 0 red, 58px 58px 0 orangered,
+      60px 60px 0 orangered, 62px 62px 0 orangered, 64px 64px 0 orangered,
+      66px 66px 0 orangered, 68px 68px 0 orangered, 70px 70px 0 orangered,
+      72px 72px 0 orangered, 74px 74px 0 gold, 76px 76px 0 gold,
+      78px 78px 0 gold, 80px 80px 0 gold, 82px 82px 0 gold, 84px 84px 0 gold,
+      86px 86px 0 gold, 88px 88px 0 gold, 90px 90px 0 lightgreen,
+      92px 92px 0 lightgreen, 94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  60% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen,
+      6px 6px 0 lightgreen, 8px 8px 0 green, 10px 10px 0 green,
+      12px 12px 0 green, 14px 14px 0 green, 16px 16px 0 green, 18px 18px 0 green,
+      20px 20px 0 green, 22px 22px 0 green, 24px 24px 0 deepskyblue,
+      26px 26px 0 deepskyblue, 28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue,
+      32px 32px 0 deepskyblue, 34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue,
+      38px 38px 0 deepskyblue, 40px 40px 0 red, 42px 42px 0 red, 44px 44px 0 red,
+      46px 46px 0 red, 48px 48px 0 red, 50px 50px 0 red, 52px 52px 0 red,
+      54px 54px 0 red, 56px 56px 0 orangered, 58px 58px 0 orangered,
+      60px 60px 0 orangered, 62px 62px 0 orangered, 64px 64px 0 orangered,
+      66px 66px 0 orangered, 68px 68px 0 orangered, 70px 70px 0 orangered,
+      72px 72px 0 gold, 74px 74px 0 gold, 76px 76px 0 gold, 78px 78px 0 gold,
+      80px 80px 0 gold, 82px 82px 0 gold, 84px 84px 0 gold, 86px 86px 0 gold,
+      88px 88px 0 lightgreen, 90px 90px 0 lightgreen, 92px 92px 0 lightgreen,
+      94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  62% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 lightgreen, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 green, 14px 14px 0 green,
+      16px 16px 0 green, 18px 18px 0 green, 20px 20px 0 green,
+      22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue, 26px 26px 0 deepskyblue,
+      28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue, 32px 32px 0 deepskyblue,
+      34px 34px 0 deepskyblue, 36px 36px 0 deepskyblue, 38px 38px 0 red,
+      40px 40px 0 red, 42px 42px 0 red, 44px 44px 0 red, 46px 46px 0 red,
+      48px 48px 0 red, 50px 50px 0 red, 52px 52px 0 red, 54px 54px 0 orangered,
+      56px 56px 0 orangered, 58px 58px 0 orangered, 60px 60px 0 orangered,
+      62px 62px 0 orangered, 64px 64px 0 orangered, 66px 66px 0 orangered,
+      68px 68px 0 orangered, 70px 70px 0 gold, 72px 72px 0 gold,
+      74px 74px 0 gold, 76px 76px 0 gold, 78px 78px 0 gold, 80px 80px 0 gold,
+      82px 82px 0 gold, 84px 84px 0 gold, 86px 86px 0 lightgreen,
+      88px 88px 0 lightgreen, 90px 90px 0 lightgreen, 92px 92px 0 lightgreen,
+      94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  64% {
+    text-shadow: 2px 2px 0 lightgreen, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 green, 14px 14px 0 green,
+      16px 16px 0 green, 18px 18px 0 green, 20px 20px 0 deepskyblue,
+      22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue, 26px 26px 0 deepskyblue,
+      28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue, 32px 32px 0 deepskyblue,
+      34px 34px 0 deepskyblue, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 red,
+      42px 42px 0 red, 44px 44px 0 red, 46px 46px 0 red, 48px 48px 0 red,
+      50px 50px 0 red, 52px 52px 0 orangered, 54px 54px 0 orangered,
+      56px 56px 0 orangered, 58px 58px 0 orangered, 60px 60px 0 orangered,
+      62px 62px 0 orangered, 64px 64px 0 orangered, 66px 66px 0 orangered,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold, 74px 74px 0 gold,
+      76px 76px 0 gold, 78px 78px 0 gold, 80px 80px 0 gold, 82px 82px 0 gold,
+      84px 84px 0 lightgreen, 86px 86px 0 lightgreen, 88px 88px 0 lightgreen,
+      90px 90px 0 lightgreen, 92px 92px 0 lightgreen, 94px 94px 0 lightgreen,
+      96px 96px 0 lightgreen;
+  }
+  66% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 green, 14px 14px 0 green,
+      16px 16px 0 green, 18px 18px 0 deepskyblue, 20px 20px 0 deepskyblue,
+      22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue, 26px 26px 0 deepskyblue,
+      28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue, 32px 32px 0 deepskyblue,
+      34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 red,
+      42px 42px 0 red, 44px 44px 0 red, 46px 46px 0 red, 48px 48px 0 red,
+      50px 50px 0 orangered, 52px 52px 0 orangered, 54px 54px 0 orangered,
+      56px 56px 0 orangered, 58px 58px 0 orangered, 60px 60px 0 orangered,
+      62px 62px 0 orangered, 64px 64px 0 orangered, 66px 66px 0 gold,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold, 74px 74px 0 gold,
+      76px 76px 0 gold, 78px 78px 0 gold, 80px 80px 0 gold,
+      82px 82px 0 lightgreen, 84px 84px 0 lightgreen, 86px 86px 0 lightgreen,
+      88px 88px 0 lightgreen, 90px 90px 0 lightgreen, 92px 92px 0 lightgreen,
+      94px 94px 0 lightgreen, 96px 96px 0 lightgreen;
+  }
+  68% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 green, 14px 14px 0 green,
+      16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue, 20px 20px 0 deepskyblue,
+      22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue, 26px 26px 0 deepskyblue,
+      28px 28px 0 deepskyblue, 30px 30px 0 deepskyblue, 32px 32px 0 red,
+      34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 red,
+      42px 42px 0 red, 44px 44px 0 red, 46px 46px 0 red, 48px 48px 0 orangered,
+      50px 50px 0 orangered, 52px 52px 0 orangered, 54px 54px 0 orangered,
+      56px 56px 0 orangered, 58px 58px 0 orangered, 60px 60px 0 orangered,
+      62px 62px 0 orangered, 64px 64px 0 gold, 66px 66px 0 gold,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold, 74px 74px 0 gold,
+      76px 76px 0 gold, 78px 78px 0 gold, 80px 80px 0 lightgreen,
+      82px 82px 0 lightgreen, 84px 84px 0 lightgreen, 86px 86px 0 lightgreen,
+      88px 88px 0 lightgreen, 90px 90px 0 lightgreen, 92px 92px 0 lightgreen,
+      94px 94px 0 lightgreen, 96px 96px 0 green;
+  }
+  70% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 green,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 deepskyblue, 22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue,
+      26px 26px 0 deepskyblue, 28px 28px 0 deepskyblue, 30px 30px 0 red,
+      32px 32px 0 red, 34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red,
+      40px 40px 0 red, 42px 42px 0 red, 44px 44px 0 red, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 orangered,
+      54px 54px 0 orangered, 56px 56px 0 orangered, 58px 58px 0 orangered,
+      60px 60px 0 orangered, 62px 62px 0 gold, 64px 64px 0 gold,
+      66px 66px 0 gold, 68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold,
+      74px 74px 0 gold, 76px 76px 0 gold, 78px 78px 0 lightgreen,
+      80px 80px 0 lightgreen, 82px 82px 0 lightgreen, 84px 84px 0 lightgreen,
+      86px 86px 0 lightgreen, 88px 88px 0 lightgreen, 90px 90px 0 lightgreen,
+      92px 92px 0 lightgreen, 94px 94px 0 green, 96px 96px 0 green;
+  }
+  72% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 green, 12px 12px 0 deepskyblue,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 deepskyblue, 22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue,
+      26px 26px 0 deepskyblue, 28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red,
+      34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 red,
+      42px 42px 0 red, 44px 44px 0 orangered, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 orangered,
+      54px 54px 0 orangered, 56px 56px 0 orangered, 58px 58px 0 orangered,
+      60px 60px 0 gold, 62px 62px 0 gold, 64px 64px 0 gold, 66px 66px 0 gold,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold, 74px 74px 0 gold,
+      76px 76px 0 lightgreen, 78px 78px 0 lightgreen, 80px 80px 0 lightgreen,
+      82px 82px 0 lightgreen, 84px 84px 0 lightgreen, 86px 86px 0 lightgreen,
+      88px 88px 0 lightgreen, 90px 90px 0 lightgreen, 92px 92px 0 green,
+      94px 94px 0 green, 96px 96px 0 green;
+  }
+  74% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 green, 10px 10px 0 deepskyblue, 12px 12px 0 deepskyblue,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 deepskyblue, 22px 22px 0 deepskyblue, 24px 24px 0 deepskyblue,
+      26px 26px 0 red, 28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red,
+      34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 red,
+      42px 42px 0 orangered, 44px 44px 0 orangered, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 orangered,
+      54px 54px 0 orangered, 56px 56px 0 orangered, 58px 58px 0 gold,
+      60px 60px 0 gold, 62px 62px 0 gold, 64px 64px 0 gold, 66px 66px 0 gold,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 gold,
+      74px 74px 0 lightgreen, 76px 76px 0 lightgreen, 78px 78px 0 lightgreen,
+      80px 80px 0 lightgreen, 82px 82px 0 lightgreen, 84px 84px 0 lightgreen,
+      86px 86px 0 lightgreen, 88px 88px 0 lightgreen, 90px 90px 0 green,
+      92px 92px 0 green, 94px 94px 0 green, 96px 96px 0 green;
+  }
+  76% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 green,
+      8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue, 12px 12px 0 deepskyblue,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 deepskyblue, 22px 22px 0 deepskyblue, 24px 24px 0 red,
+      26px 26px 0 red, 28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red,
+      34px 34px 0 red, 36px 36px 0 red, 38px 38px 0 red, 40px 40px 0 orangered,
+      42px 42px 0 orangered, 44px 44px 0 orangered, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 orangered,
+      54px 54px 0 orangered, 56px 56px 0 gold, 58px 58px 0 gold,
+      60px 60px 0 gold, 62px 62px 0 gold, 64px 64px 0 gold, 66px 66px 0 gold,
+      68px 68px 0 gold, 70px 70px 0 gold, 72px 72px 0 lightgreen,
+      74px 74px 0 lightgreen, 76px 76px 0 lightgreen, 78px 78px 0 lightgreen,
+      80px 80px 0 lightgreen, 82px 82px 0 lightgreen, 84px 84px 0 lightgreen,
+      86px 86px 0 lightgreen, 88px 88px 0 green, 90px 90px 0 green,
+      92px 92px 0 green, 94px 94px 0 green, 96px 96px 0 green;
+  }
+  78% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 green, 6px 6px 0 deepskyblue,
+      8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue, 12px 12px 0 deepskyblue,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 deepskyblue, 22px 22px 0 red, 24px 24px 0 red, 26px 26px 0 red,
+      28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red, 34px 34px 0 red,
+      36px 36px 0 red, 38px 38px 0 orangered, 40px 40px 0 orangered,
+      42px 42px 0 orangered, 44px 44px 0 orangered, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 orangered,
+      54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold, 60px 60px 0 gold,
+      62px 62px 0 gold, 64px 64px 0 gold, 66px 66px 0 gold, 68px 68px 0 gold,
+      70px 70px 0 lightgreen, 72px 72px 0 lightgreen, 74px 74px 0 lightgreen,
+      76px 76px 0 lightgreen, 78px 78px 0 lightgreen, 80px 80px 0 lightgreen,
+      82px 82px 0 lightgreen, 84px 84px 0 lightgreen, 86px 86px 0 green,
+      88px 88px 0 green, 90px 90px 0 green, 92px 92px 0 green, 94px 94px 0 green,
+      96px 96px 0 green;
+  }
+  80% {
+    text-shadow: 2px 2px 0 green, 4px 4px 0 deepskyblue, 6px 6px 0 deepskyblue,
+      8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue, 12px 12px 0 deepskyblue,
+      14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue, 18px 18px 0 deepskyblue,
+      20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red, 26px 26px 0 red,
+      28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red, 34px 34px 0 red,
+      36px 36px 0 orangered, 38px 38px 0 orangered, 40px 40px 0 orangered,
+      42px 42px 0 orangered, 44px 44px 0 orangered, 46px 46px 0 orangered,
+      48px 48px 0 orangered, 50px 50px 0 orangered, 52px 52px 0 gold,
+      54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold, 60px 60px 0 gold,
+      62px 62px 0 gold, 64px 64px 0 gold, 66px 66px 0 gold,
+      68px 68px 0 lightgreen, 70px 70px 0 lightgreen, 72px 72px 0 lightgreen,
+      74px 74px 0 lightgreen, 76px 76px 0 lightgreen, 78px 78px 0 lightgreen,
+      80px 80px 0 lightgreen, 82px 82px 0 lightgreen, 84px 84px 0 green,
+      86px 86px 0 green, 88px 88px 0 green, 90px 90px 0 green, 92px 92px 0 green,
+      94px 94px 0 green, 96px 96px 0 green;
+  }
+  82% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue,
+      12px 12px 0 deepskyblue, 14px 14px 0 deepskyblue, 16px 16px 0 deepskyblue,
+      18px 18px 0 red, 20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red,
+      26px 26px 0 red, 28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 red,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 orangered, 42px 42px 0 orangered, 44px 44px 0 orangered,
+      46px 46px 0 orangered, 48px 48px 0 orangered, 50px 50px 0 gold,
+      52px 52px 0 gold, 54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold,
+      60px 60px 0 gold, 62px 62px 0 gold, 64px 64px 0 gold,
+      66px 66px 0 lightgreen, 68px 68px 0 lightgreen, 70px 70px 0 lightgreen,
+      72px 72px 0 lightgreen, 74px 74px 0 lightgreen, 76px 76px 0 lightgreen,
+      78px 78px 0 lightgreen, 80px 80px 0 lightgreen, 82px 82px 0 green,
+      84px 84px 0 green, 86px 86px 0 green, 88px 88px 0 green, 90px 90px 0 green,
+      92px 92px 0 green, 94px 94px 0 green, 96px 96px 0 green;
+  }
+  84% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue,
+      12px 12px 0 deepskyblue, 14px 14px 0 deepskyblue, 16px 16px 0 red,
+      18px 18px 0 red, 20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red,
+      26px 26px 0 red, 28px 28px 0 red, 30px 30px 0 red, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 orangered, 42px 42px 0 orangered, 44px 44px 0 orangered,
+      46px 46px 0 orangered, 48px 48px 0 gold, 50px 50px 0 gold,
+      52px 52px 0 gold, 54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold,
+      60px 60px 0 gold, 62px 62px 0 gold, 64px 64px 0 lightgreen,
+      66px 66px 0 lightgreen, 68px 68px 0 lightgreen, 70px 70px 0 lightgreen,
+      72px 72px 0 lightgreen, 74px 74px 0 lightgreen, 76px 76px 0 lightgreen,
+      78px 78px 0 lightgreen, 80px 80px 0 green, 82px 82px 0 green,
+      84px 84px 0 green, 86px 86px 0 green, 88px 88px 0 green, 90px 90px 0 green,
+      92px 92px 0 green, 94px 94px 0 green, 96px 96px 0 deepskyblue;
+  }
+  86% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue,
+      12px 12px 0 deepskyblue, 14px 14px 0 red, 16px 16px 0 red, 18px 18px 0 red,
+      20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red, 26px 26px 0 red,
+      28px 28px 0 red, 30px 30px 0 orangered, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 orangered, 42px 42px 0 orangered, 44px 44px 0 orangered,
+      46px 46px 0 gold, 48px 48px 0 gold, 50px 50px 0 gold, 52px 52px 0 gold,
+      54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold, 60px 60px 0 gold,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 lightgreen,
+      68px 68px 0 lightgreen, 70px 70px 0 lightgreen, 72px 72px 0 lightgreen,
+      74px 74px 0 lightgreen, 76px 76px 0 lightgreen, 78px 78px 0 green,
+      80px 80px 0 green, 82px 82px 0 green, 84px 84px 0 green, 86px 86px 0 green,
+      88px 88px 0 green, 90px 90px 0 green, 92px 92px 0 green,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  88% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 deepskyblue, 10px 10px 0 deepskyblue,
+      12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red, 18px 18px 0 red,
+      20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red, 26px 26px 0 red,
+      28px 28px 0 orangered, 30px 30px 0 orangered, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 orangered, 42px 42px 0 orangered, 44px 44px 0 gold,
+      46px 46px 0 gold, 48px 48px 0 gold, 50px 50px 0 gold, 52px 52px 0 gold,
+      54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 gold,
+      60px 60px 0 lightgreen, 62px 62px 0 lightgreen, 64px 64px 0 lightgreen,
+      66px 66px 0 lightgreen, 68px 68px 0 lightgreen, 70px 70px 0 lightgreen,
+      72px 72px 0 lightgreen, 74px 74px 0 lightgreen, 76px 76px 0 green,
+      78px 78px 0 green, 80px 80px 0 green, 82px 82px 0 green, 84px 84px 0 green,
+      86px 86px 0 green, 88px 88px 0 green, 90px 90px 0 green,
+      92px 92px 0 deepskyblue, 94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  90% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 deepskyblue, 10px 10px 0 red,
+      12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red, 18px 18px 0 red,
+      20px 20px 0 red, 22px 22px 0 red, 24px 24px 0 red, 26px 26px 0 orangered,
+      28px 28px 0 orangered, 30px 30px 0 orangered, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 orangered, 42px 42px 0 gold, 44px 44px 0 gold,
+      46px 46px 0 gold, 48px 48px 0 gold, 50px 50px 0 gold, 52px 52px 0 gold,
+      54px 54px 0 gold, 56px 56px 0 gold, 58px 58px 0 lightgreen,
+      60px 60px 0 lightgreen, 62px 62px 0 lightgreen, 64px 64px 0 lightgreen,
+      66px 66px 0 lightgreen, 68px 68px 0 lightgreen, 70px 70px 0 lightgreen,
+      72px 72px 0 lightgreen, 74px 74px 0 green, 76px 76px 0 green,
+      78px 78px 0 green, 80px 80px 0 green, 82px 82px 0 green, 84px 84px 0 green,
+      86px 86px 0 green, 88px 88px 0 green, 90px 90px 0 deepskyblue,
+      92px 92px 0 deepskyblue, 94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  92% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue,
+      6px 6px 0 deepskyblue, 8px 8px 0 red, 10px 10px 0 red, 12px 12px 0 red,
+      14px 14px 0 red, 16px 16px 0 red, 18px 18px 0 red, 20px 20px 0 red,
+      22px 22px 0 red, 24px 24px 0 orangered, 26px 26px 0 orangered,
+      28px 28px 0 orangered, 30px 30px 0 orangered, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 orangered, 38px 38px 0 orangered,
+      40px 40px 0 gold, 42px 42px 0 gold, 44px 44px 0 gold, 46px 46px 0 gold,
+      48px 48px 0 gold, 50px 50px 0 gold, 52px 52px 0 gold, 54px 54px 0 gold,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 lightgreen,
+      68px 68px 0 lightgreen, 70px 70px 0 lightgreen, 72px 72px 0 green,
+      74px 74px 0 green, 76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 green, 84px 84px 0 green, 86px 86px 0 green,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  94% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 deepskyblue, 6px 6px 0 red,
+      8px 8px 0 red, 10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red,
+      16px 16px 0 red, 18px 18px 0 red, 20px 20px 0 red, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 orangered, 34px 34px 0 orangered,
+      36px 36px 0 orangered, 38px 38px 0 gold, 40px 40px 0 gold,
+      42px 42px 0 gold, 44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 gold,
+      50px 50px 0 gold, 52px 52px 0 gold, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 lightgreen,
+      68px 68px 0 lightgreen, 70px 70px 0 green, 72px 72px 0 green,
+      74px 74px 0 green, 76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 green, 84px 84px 0 green, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  96% {
+    text-shadow: 2px 2px 0 deepskyblue, 4px 4px 0 red, 6px 6px 0 red,
+      8px 8px 0 red, 10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red,
+      16px 16px 0 red, 18px 18px 0 red, 20px 20px 0 orangered,
+      22px 22px 0 orangered, 24px 24px 0 orangered, 26px 26px 0 orangered,
+      28px 28px 0 orangered, 30px 30px 0 orangered, 32px 32px 0 orangered,
+      34px 34px 0 orangered, 36px 36px 0 gold, 38px 38px 0 gold,
+      40px 40px 0 gold, 42px 42px 0 gold, 44px 44px 0 gold, 46px 46px 0 gold,
+      48px 48px 0 gold, 50px 50px 0 gold, 52px 52px 0 lightgreen,
+      54px 54px 0 lightgreen, 56px 56px 0 lightgreen, 58px 58px 0 lightgreen,
+      60px 60px 0 lightgreen, 62px 62px 0 lightgreen, 64px 64px 0 lightgreen,
+      66px 66px 0 lightgreen, 68px 68px 0 green, 70px 70px 0 green,
+      72px 72px 0 green, 74px 74px 0 green, 76px 76px 0 green, 78px 78px 0 green,
+      80px 80px 0 green, 82px 82px 0 green, 84px 84px 0 deepskyblue,
+      86px 86px 0 deepskyblue, 88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue,
+      92px 92px 0 deepskyblue, 94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  98% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red,
+      18px 18px 0 orangered, 20px 20px 0 orangered, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 orangered, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 gold,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+  100% {
+    text-shadow: 2px 2px 0 red, 4px 4px 0 red, 6px 6px 0 red, 8px 8px 0 red,
+      10px 10px 0 red, 12px 12px 0 red, 14px 14px 0 red, 16px 16px 0 red,
+      18px 18px 0 orangered, 20px 20px 0 orangered, 22px 22px 0 orangered,
+      24px 24px 0 orangered, 26px 26px 0 orangered, 28px 28px 0 orangered,
+      30px 30px 0 orangered, 32px 32px 0 orangered, 34px 34px 0 gold,
+      36px 36px 0 gold, 38px 38px 0 gold, 40px 40px 0 gold, 42px 42px 0 gold,
+      44px 44px 0 gold, 46px 46px 0 gold, 48px 48px 0 gold,
+      50px 50px 0 lightgreen, 52px 52px 0 lightgreen, 54px 54px 0 lightgreen,
+      56px 56px 0 lightgreen, 58px 58px 0 lightgreen, 60px 60px 0 lightgreen,
+      62px 62px 0 lightgreen, 64px 64px 0 lightgreen, 66px 66px 0 green,
+      68px 68px 0 green, 70px 70px 0 green, 72px 72px 0 green, 74px 74px 0 green,
+      76px 76px 0 green, 78px 78px 0 green, 80px 80px 0 green,
+      82px 82px 0 deepskyblue, 84px 84px 0 deepskyblue, 86px 86px 0 deepskyblue,
+      88px 88px 0 deepskyblue, 90px 90px 0 deepskyblue, 92px 92px 0 deepskyblue,
+      94px 94px 0 deepskyblue, 96px 96px 0 deepskyblue;
+  }
+}
+
+@keyframes animateborder {
+  0% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(-6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(-2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(1.2deg);
+  }
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
   }
 }
