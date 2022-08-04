@@ -118,6 +118,12 @@ li a:hover {
     text-align: center;
     padding: 15px;
   }
+  #awesome:hover {
+    padding: 8px 12px;
+    background-color: rgb(15, 15, 15);
+    color: rgb(255, 85, 85);
+    font-size: 1.3em;
+  }
 }
 
 @keyframes crazy-rainbow-animation {
